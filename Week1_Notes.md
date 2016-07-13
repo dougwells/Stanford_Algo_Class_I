@@ -1,6 +1,6 @@
-# Stanford Algorithm's Class - Professor Tim Roughgarden
+## Stanford Algorithm's Class - Professor Tim Roughgarden
 
-## Week 1: Notes
+### Week 1: Notes:
 
 1. Big-O:  Upper Bound.  Tn (number of operations) is less than or equal to Big-O
   * Big-O is upper bound.  
@@ -15,3 +15,5 @@
 3.  Theta = Equality
 
 4.  "Little-o":  Strictly less than.  Never equal
+
+### Week 1: Algorithms Discussed:
