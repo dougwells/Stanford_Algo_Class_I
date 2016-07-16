@@ -19,4 +19,4 @@ let fibonacci = (n, max) => {
   }
 }
 
-fibonacci(10,20);
+fibonacci(1,10);
