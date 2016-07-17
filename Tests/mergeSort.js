@@ -1,43 +1,62 @@
+"use strict"
 
-var mergeSort = function(A) {
-	if (A.length === 1) {
-    return A;
-  }
+//use this file for merge-sort & counting inversions
+//simply run "sort" fn on array to get a count of the number of inversions
+//"sort" returns the sorted array which you can assign to var or print to console
+  //var sortedArr = sort(unsortedArr);
+  //console.log(sort(arr)); --> console logs count of inversions & returns sorted array
 
-	var midpoint = A.length / 2;
-	var leftHalf = A.slice(0, midpoint);
-	var rightHalf = A.slice(midpoint, A.length);
-  console.log("split fn", leftHalf, rightHalf);
+var fs = require('fs');
 
-	rightHalf = mergeSort(rightHalf);
+fs.readFile('./Tests/IntegerArray.txt', function(err, data) {
+    if(err) {console.log("ERROR:", err);}
+    var bigStringArray = data.toString().split("\n");
+    var bigNumArray = bigStringArray.map(Number);
+    bigNumArray.pop();
+    console.log(bigNumArray[10]);
 
 
-	return merge(leftHalf, rightHalf);
-};
+    var count =0;
+    var littleArr = [6,5,4,3,2,1];
+    sort(bigNumArray);
+    console.log("Number of inversions", count);
 
-var merge = function(arr1, arr2) {
-  console.log("Arrays to merge", arr1, arr2)
-	var mergedArr = [];
-	var i = 0;
-	var j = 0;
+    function sort(array) {
 
-	while ( i < arr1.length && j < arr2.length ) {
-    console.log("pre-merge fn = ",mergedArr);
-		if ( arr1[i] > arr2[j] ) {
-			mergedArr.push(arr2[j]);
-			j++;
-		} else {
-			mergedArr.push(arr1[i]);
-			i++;
-		}
-    console.log("post-merge fn = ",mergedArr);
-	};
+      var length = array.length,
+          mid    = Math.floor(length * 0.5),
+          left   = array.slice(0, mid),
+          right  = array.slice(mid, length);
 
-  var finalArr = mergedArr.concat(arr1.slice(i, arr1.length))
-					.concat(arr2.slice(j, arr2.length));
-  console.log("final array = ", finalArr);
-	return finalArr;
-};
+      if(length === 1) {
+        return array;
+      }
+      // console.log("Left / Right: ", left, right);
+      return merge(sort(left), sort(right));
 
-// mergeSort([1,3,5,7,9,2,4,6,8,10]);
-mergeSort([6,5,4,3,2,1]);
+    }
+
+    function merge(left, right) {
+      // console.log("Arrays to merge", left, right)
+      var result = [];
+
+      while(left.length || right.length) {
+        if(left.length && right.length) {
+          if(left[0] < right[0]) {
+            result.push(left.shift());
+          } else {
+            count = count + left.length;
+            result.push(right.shift());
+          }
+
+        } else if (left.length) {
+          result.push(left.shift());
+        } else {
+          result.push(right.shift());
+        }
+
+      }
+      return result;
+    }
+
+  });
