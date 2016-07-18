@@ -13,12 +13,10 @@ fs.readFile('./Tests/IntegerArray.txt', function(err, data) {
     var bigStringArray = data.toString().split("\n");
     var bigNumArray = bigStringArray.map(Number);
     bigNumArray.pop();
-    console.log(bigNumArray[10]);
-
 
     var count =0;
     var littleArr = [6,5,4,3,2,1];
-    sort(bigNumArray);
+    console.log(sort(bigNumArray)[49999]);
     console.log("Number of inversions", count);
 
     function sort(array) {
