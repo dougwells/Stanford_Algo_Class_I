@@ -25,12 +25,13 @@
 ### Week 2: Master Method & Quicksort:
 
 1. Master Method (aka "Master Theorem"): "Blackbox" for determining number of operations in recursion
-  * Equation: T(n) <= a*T(n/b) + O(n^d)
+  * Equation: T(n) <= a*T(n/b) + C(n^d)
     1. T(n) = running time for algorithm
     2. a = number of recursive calls made per step (ie, Merge-Sort is 2)
     3. b = input size "shrinkage" prior to being fed into recursive call (Merge-Sort = 2)
     4. d = exponent for work needed for "combine step".  d can be zero (more commonly = 1)
       * n^d is the work that is done outside of recursion
+    5. C = constant (earlier version had this as O)
 
   * Blackbox answer.  3 base cases
     1. Case 1:  if a=b^d  --> O(n^d*log[n])   This is Merge-Sort case (a=2, b=2, d=1)
