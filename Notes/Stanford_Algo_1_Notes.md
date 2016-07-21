@@ -37,3 +37,7 @@
     1. Case 1:  if a=b^d  --> O(n^d*log[n])   This is Merge-Sort case (a=2, b=2, d=1)
     2. Case 2:  if a<b^d  --> O(n^d)
     3. Case 3:  if a>b^d  --> O(n^[logb(a)])  log-base matters b/c in exponent (vs case 1 changes leading constant factor)
+
+### Week 3: Linear Time Selection
+
+1. Geometric sum - Good explanation.  https://en.wikipedia.org/wiki/Geometric_series

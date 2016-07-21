@@ -6,17 +6,15 @@ var newArr = [];
 var double = (arr) =>{
   if (arr.length <2) {
     newArr.push(2*arr[0]);
-    console.log("double, new", 2*arr[0], newArr);
-    return newArr;
+    return arr[0];
   }
 
   let p = (arr.length)/2;
   let leftArr = arr.slice(0,p)
   let rightArr = arr.slice(p, arr.length)
-  console.log("Left/Right", leftArr, rightArr)
   double(leftArr);
   double(rightArr);
   return newArr;
 }
-
-console.log(double(testArr));
+console.log("start", testArr);
+console.log("doubled", double(testArr));
