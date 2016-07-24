@@ -16,11 +16,34 @@ let partition = (arr, startIndex, endIndex) => {
   let l = startIndex || 0;
   let r = endIndex || (arr.length-1);
   let numElements = r-l+1
+  let first, middle, last, middleIndex;
 
-  //if want pivot as LAST ELEMENT OF ARRAY
-    swap(l, r, arr);
-  //
-    
+  // //if want pivot as LAST ELEMENT OF ARRAY
+  //   swap(l, r, arr);
+  // //
+
+  //if want median element of First Middle and Last to be Pivot
+    if(numElements>2){
+      if ((r - l)%2){
+        middleIndex = Math.floor(((r + l)/2))
+        // console.log("even", l, middleIndex, r, arr)
+      }else{
+        middleIndex = (r+l)/2
+        // console.log("odd", l, middleIndex, r, arr)
+      }
+      first = arr[l];
+      middle = arr[middleIndex];
+      last = arr[r];
+      if((middle - first)*(last-middle)>0){
+        swap(l, middleIndex, arr)
+      }else if((last-first)*(middle-last)>0){
+        swap(l, r, arr)
+      }
+    }
+  // End search for Median
+
+
+
   let pivot = arr[l];
   let i = l+1
   // console.log("starting count", count)
@@ -63,6 +86,7 @@ let swap = (leftIndex, rightIndex, array) =>{
   return array;
 
 }
+
 
 var quickSort = function(array, p, r) {
   // console.log("quicksort called", p, r, array);
