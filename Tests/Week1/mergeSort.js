@@ -8,7 +8,7 @@
 
 var fs = require('fs');
 
-fs.readFile('./Tests/IntegerArray.txt', function(err, data) {
+fs.readFile('./Tests/Week1/IntegerArray.txt', function(err, data) {
     if(err) {console.log("ERROR:", err);}
     var bigStringArray = data.toString().split("\n");
     var bigNumArray = bigStringArray.map(Number);
