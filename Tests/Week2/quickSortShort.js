@@ -16,6 +16,11 @@ let partition = (arr, startIndex, endIndex) => {
   let l = startIndex || 0;
   let r = endIndex || (arr.length-1);
   let numElements = r-l+1
+
+  //if want pivot as LAST ELEMENT OF ARRAY
+    swap(l, r, arr);
+  //
+    
   let pivot = arr[l];
   let i = l+1
   // console.log("starting count", count)
