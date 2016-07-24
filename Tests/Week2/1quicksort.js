@@ -7,7 +7,7 @@ var count = 0;
 let partition = (arr, startIndex, endIndex) => {
   let l = startIndex || 0;
   let r = endIndex || (arr.length-1);
-  count = count + (r-l);
+  count = count + (r-l-1);
   let pivot = arr[l];
   let i = l+1
   console.log('partition called', count, pivot,l, r, arr);
