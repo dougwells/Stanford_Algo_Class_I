@@ -40,4 +40,6 @@
 
 ### Week 3: Linear Time Selection
 
-1. Geometric sum - Good explanation.  https://en.wikipedia.org/wiki/Geometric_series
+1. Uses random selection of pivot.  Showed running time = 8c*(N)
+  * Geometric sum - Good explanation.  https://en.wikipedia.org/wiki/Geometric_series
+2. Discrete pivot selection = no random selection.  
