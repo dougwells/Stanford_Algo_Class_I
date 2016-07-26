@@ -40,6 +40,14 @@
 
 ### Week 3: Linear Time Selection
 
-1. Uses random selection of pivot.  Showed running time = 8c*(N)
-  * Geometric sum - Good explanation.  https://en.wikipedia.org/wiki/Geometric_series
-2. Discrete pivot selection = no random selection.  
+1. R-Select:  Uses random selection of pivot.  (R := "Random")
+  * Running time:
+    1. Best (if 25<p<75).  Running time = 8c*(N)
+      * Used coin toss as part of proof (since also 50/50 outcome)
+      * Geometric sum - Good explanation.  https://en.wikipedia.org/wiki/Geometric_series
+    2. Worse = N^2
+
+2. Discrete pivot selection = no random selection. (D := "Discrete")
+  * Uses "Median of Medians"
+  * Running time is always linear (but high coefficients and lower order terms)
+  * In practice use, R-Select
