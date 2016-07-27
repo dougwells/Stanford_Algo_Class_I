@@ -51,3 +51,13 @@
   * Uses "Median of Medians"
   * Running time is always linear (but high coefficients and lower order terms)
   * In practice use, R-Select
+
+3. Graphs
+  * Definitions
+    1. n = number vertices or "nodes"
+    2. m = number of edges (an edge simply connects 2 "dots" or nodes)
+    3. cuts
+      * grouping of all nodes into either A or B.  
+      * Goal is to minimize # of edges "cut"
+      * k = of edges that get cut (cross A & B)
+        1. number of cuts possible, 2^n
