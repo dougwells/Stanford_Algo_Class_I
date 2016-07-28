@@ -23,6 +23,7 @@
 4.  "Little-o":  Strictly less than.  Never equal
 
 ### Week 2: Master Method & Quicksort:
+#### Comparison algos - best you can do is n*log(n)
 
 1. Master Method (aka "Master Theorem"): "Blackbox" for determining number of operations in recursion
   * Equation: T(n) <= a*T(n/b) + C(n^d)
@@ -38,7 +39,8 @@
     2. Case 2:  if a<b^d  --> O(n^d)
     3. Case 3:  if a>b^d  --> O(n^[logb(a)])  log-base matters b/c in exponent (vs case 1 changes leading constant factor)
 
-### Week 3: Linear Time Selection
+### Week 3: Selection Algo (find i-th item in sorted array), Graphs, & Karger's Algo for minimum cuts
+#### Selection algo runs faster than n*log(n) b/c only work with half of array per recursion call
 
 1. R-Select:  Uses random selection of pivot.  (R := "Random")
   * Running time:
@@ -53,6 +55,9 @@
   * In practice use, R-Select
 
 3. Graphs
+  * Karger "min-cut" algorithm:  http://www.geeksforgeeks.org/kargers-algorithm-for-minimum-cut-set-1-introduction-and-implementation/
+  http://mlarocca.github.io/05-22-2014/karger.html
+  http://stackoverflow.com/questions/23825200/karger-min-cut-algorithm-in-python-2-7
   * Definitions
     1. n = number vertices or "nodes"
     2. m = number of edges (an edge simply connects 2 "dots" or nodes)
@@ -60,4 +65,5 @@
       * grouping of all nodes into either A or B.  
       * Goal is to minimize # of edges "cut"
       * k = of edges that get cut (cross A & B)
-        1. number of cuts possible, 2^n
+        1. number of cuts possible, ~ 2^n  (actually (2^n)-2 )
+    4. Min cut = cut which produces fewest crossing edges
