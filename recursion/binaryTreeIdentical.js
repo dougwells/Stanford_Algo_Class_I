@@ -1,5 +1,7 @@
 "use strict"
 
+// Are these trees identical?
+
 var addChildren = function(object, left, right){
   object.left = {id: left};
   object.right = {id: right};
