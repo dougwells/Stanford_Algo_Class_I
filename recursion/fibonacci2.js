@@ -3,4 +3,4 @@ function fibonacci(num){
   return fibonacci(num-1) + fibonacci(num-2);
 }
 
-fibonacci(3);
+fibonacci(2);
