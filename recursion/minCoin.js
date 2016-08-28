@@ -1,9 +1,11 @@
-function MinCoinChange(coins){
-var coins = coins;
+function MinCoinChange(arrOfCoins){
+var coins = arrOfCoins;
 
 this.makeChange = function(amount) {
-var change = [],
-total = 0;
+var change = [];
+var total = 0;
+
+
 for (var i=coins.length; i>=0; i--){
   var coin = coins[i];
   while (total + coin <= amount) {
